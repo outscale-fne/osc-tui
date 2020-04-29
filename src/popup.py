@@ -508,22 +508,14 @@ def startLoading(form, refresh):
         SHOW_ATX = 10
         SHOW_ATY = 2
 
-    def _prepare_message(message):
-        return message
-
-    def _wrap_message_lines(message, line_length):
-        return message.split('\n')
-
     def notify(message, title="Loading", form_color='STANDOUT',
                wrap=True, wide=False,
                ):
-        message = _prepare_message(message)
         F = PendingPopup(name=title, color=form_color)
         F.preserve_selected_widget = True
         mlw = F.add(wgmultiline.Pager,)
         mlw_width = mlw.width - 1
-        if wrap:
-            message = _wrap_message_lines(message, mlw_width)
+        message = message.split('\n')
         mlw.values = message
         F.display()
     global waiting
