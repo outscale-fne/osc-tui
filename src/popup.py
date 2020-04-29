@@ -505,7 +505,7 @@ def startLoading(form, refresh):
     class PendingPopup(fmForm.Form):
         DEFAULT_LINES = 7
         DEFAULT_COLUMNS = 12
-        SHOW_ATX = 5
+        SHOW_ATX = 10
         SHOW_ATY = 2
 
     def _prepare_message(message):
